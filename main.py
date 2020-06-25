@@ -25,7 +25,7 @@ def verifUrl_B3(url):
     str = url.split(".")
     x, y = str
 
-    if len(y) == 3:
+    if len(y) <= 3:
       return True
 
     else:
@@ -38,13 +38,24 @@ def verifUrl_B3(url):
 
 ###### exercice 03
 def getTLD_O8(url):
-  if verifUrl_B3("microsoft.com"):
-    return True
-  else
+  if verifUrl_B3(url):
+    str = url.split(".")
+    x, y = str
+    return y
+  else:
+    print("TDL mal formee")
     return False
 
 ###### exercice 04
+def VerifTLD_W5(tldOk, tld):
+  for x in tldOk:
+    if tld==x:
+      return True
 
+  print("TLD Absente")
+  return False
+      
+  
 
 ###### exercice 05
     
@@ -84,12 +95,13 @@ def main() :
 
 	###### exercice 03
   print("exercice 03 #######################")
-  result = getTLD_O8(url)
+  result = getTLD_O8("microsoft.com")
+  print(result)
 
 
 	###### exercice 04
   print("exercice 04 #######################")
-
+  result = VerifTLD_W5(['fr', 'com', 'net'], "com")
 
 	###### exercice 05
   print("exercice 05 #######################")
