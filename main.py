@@ -131,7 +131,11 @@ class serveurDns_C3:
     if ipVerifFormat_K2(adresseIp):
       print(adresseIp)
       if adresseIp in self.resolDns.values():
-        print mydict.keys()[mydict.values().index(16)]
+
+        """for item in self.resolDns.values():
+            if item[1] == adresseIp:
+                listOfKeys.append(item[0])
+                print(listOfKeys)"""
 
       else:
         print("adresse IP inconnue")
