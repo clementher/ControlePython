@@ -5,9 +5,10 @@ def exempleHello (msg):
 
 
 ###### exercice 01
-def makeDico_A7():
+def makeDico_A7(filename, sep):
    print("Creation d'un dictionnaire a partir du fichier 'dns.txt' avec '80' entrees")
-   f = open("demofile.txt", "r")
+   f = open(filename, "r")
+   f.read().split(sep)
    print(f.read())
 
 ###### exercice 02
@@ -47,7 +48,7 @@ def main() :
 
 	###### exercice 01
 	print("exercice 01 #######################")
-	resolDns = makeDico_A7()
+	resolDns = makeDico_A7 ("dns.txt", ",")
 
 	###### exercice 02
 	print("exercice 02 #######################")
