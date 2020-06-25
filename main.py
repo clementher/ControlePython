@@ -90,13 +90,41 @@ def ipVerifFormat_K2(adresseIp):
 
 ###### exercice 06
 def makeTLD_E5(resolDns):
-  
+  print(resolDns.keys())
+  List = []
+  for x in resolDns.keys():
+    str = x.split(".")
+    z, y = str
+    if y in List :
+      pass
+    else:
+      List.append(y)
+  print("Creation d'une liste de TLD comprenant 5 entrees")
+  return List
 
 # Zone 2 ## zone pour les classes
 ###### exercice 07
-
+class serveurDns_C3:
+  def __init__(self, resolDns):
+    self.resolDns = resolDns
 
 ###### exercice 08
+  def resolDNS_T3(self, url):
+    result = verifUrl_B3(url)
+
+    if result:
+      print(result)
+
+      if url in self.resolDns.keys():
+        print("blah")
+
+      else:
+        print("url introuvable")
+        return False
+        
+    else:
+      print('erreur de format de l’url')
+      return False
 
 
 ###### exercice 09
@@ -141,11 +169,14 @@ def main() :
 	###### exercice 06
   print("exercice 06 #######################")
   tldOk = makeTLD_E5(resolDns)
+  print(tldOk)
 
 	# Zone 4 ## zone pour les tests de la classe
 
 	###### exercice 07
   print("exercice 07 #######################")
+  s = serveurDns_C3(resolDns)
+  adresseIp = s.resolDNS_T3("google.fr")
 
 
 	###### exercice 08
