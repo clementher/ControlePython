@@ -90,7 +90,6 @@ def ipVerifFormat_K2(adresseIp):
 
 ###### exercice 06
 def makeTLD_E5(resolDns):
-  print(resolDns.keys())
   List = []
   for x in resolDns.keys():
     str = x.split(".")
@@ -116,7 +115,7 @@ class serveurDns_C3:
       print(result)
 
       if url in self.resolDns.keys():
-        print("blah")
+        return self.resolDns.get(url)
 
       else:
         print("url introuvable")
@@ -128,7 +127,22 @@ class serveurDns_C3:
 
 
 ###### exercice 09
-    
+  def resolInverse_H6(self, adresseIp):
+    if ipVerifFormat_K2(adresseIp):
+      print(adresseIp)
+      if adresseIp in self.resolDns.values():
+        print mydict.keys()[mydict.values().index(16)]
+
+      else:
+        print("adresse IP inconnue")
+        return False
+    else: 
+      print("erreur de format de l’adresse IP")
+      return False
+
+
+
+
 
 # Zone 3 ## zone pour les tests des fonctions
 
@@ -176,15 +190,18 @@ def main() :
 	###### exercice 07
   print("exercice 07 #######################")
   s = serveurDns_C3(resolDns)
-  adresseIp = s.resolDNS_T3("google.fr")
 
 
 	###### exercice 08
   print("exercice 08 #######################")
+  adresseIp = s.resolDNS_T3("google.fr")
+  print(adresseIp)
 
 
 	###### exercice 09
   print("exercice 09 #######################")
+  url= s.resolInverse_H6(adresseIp)
+  print(url)
 	
 	###### exercice 10
   print("exercice 10 #######################")
