@@ -58,10 +58,39 @@ def VerifTLD_W5(tldOk, tld):
   
 
 ###### exercice 05
-    
+def ipVerifFormat_K2(adresseIp):
+  decode = adresseIp.count(".")
+  if decode == 3:
+    str = adresseIp.split(".")
+    nb1, nb2, nb3, nb4 = str
+
+    if int(nb1) >= 0 and int(nb1) <= 255:
+      if int(nb2) >= 0 and int(nb2) <= 255:
+        if int(nb3) >= 0 and int(nb3) <= 255:
+          if int(nb4) >= 0 and int(nb4) <= 255:
+            return True
+          else:
+            print("champ d'adresse incorrect")
+            return False
+        else:
+          print("champ d'adresse incorrect")
+          return False
+      else:
+        print("champ d'adresse incorrect")
+        return False
+    else:
+      print("champ d'adresse incorrect")
+      return False
+      
+  else:
+    print("nombre de champs incorrect")
+    return False
+
+  
 
 ###### exercice 06
-
+def makeTLD_E5(resolDns):
+  
 
 # Zone 2 ## zone pour les classes
 ###### exercice 07
@@ -90,25 +119,28 @@ def main() :
 
 	###### exercice 02
   print("exercice 02 #######################")
-  result = verifUrl_B3("microsoft.com")
-  print(result)
+  result1 = verifUrl_B3("microsoft.com")
+  print(result1)
 
 	###### exercice 03
   print("exercice 03 #######################")
-  result = getTLD_O8("microsoft.com")
-  print(result)
+  result2 = getTLD_O8("microsoft.com")
+  print(result2)
 
 
 	###### exercice 04
   print("exercice 04 #######################")
-  result = VerifTLD_W5(['fr', 'com', 'net'], "com")
+  result3 = VerifTLD_W5(['fr', 'com', 'net'], "com")
+  print(result3)
 
 	###### exercice 05
   print("exercice 05 #######################")
-
+  result4 = ipVerifFormat_K2("66.235.120.127")
+  print(result4)
 
 	###### exercice 06
   print("exercice 06 #######################")
+  tldOk = makeTLD_E5(resolDns)
 
 	# Zone 4 ## zone pour les tests de la classe
 
